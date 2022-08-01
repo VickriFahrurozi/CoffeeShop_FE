@@ -11,7 +11,7 @@ import { AuthLogout } from '../redux/actions/Auth';
 import Navbar from '../components/navbar';
 import Home from '../components/Home/Home';
 const home = (data) => {
-	const { list, totalpage, totalrow, totaldata } = data.data;
+	const { list, totalpage, totalrow, totaldata } = data;
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const [Refetch, setRefetch] = useState();
@@ -28,48 +28,15 @@ const home = (data) => {
 	return (
 		<>
 			<Navbar />
-			<Home />
+			<Home data={data} />
 			<Footer />
-			{/* <div className='container-fluid'>
-				<div className='row'>
-					<div className='col-3 d-flex'>
-						{list?.map((item, index) => {
-							return (
-								<>
-									<div className='col card'>
-										<div key={index}>{item.product_name}</div>
-										<div>
-											<Image
-												// loader={myLoader(item.product_picture)}
-												src={`http://localhost:9999/upload/${item.product_picture}`}
-												width={'100'}
-												height={'200'}
-											/>
-										</div>
-									</div>
-								</>
-							);
-						})}
-					</div>
-				</div>
-			</div>
-			<button
-				className='btn btn-primary'
-				onClick={() => {
-					dispatch(AuthLogout());
-					setRefetch(!Refetch);
-				}}
-			>
-				Logout
-			</button>
-			// <Footer /> */}
 		</>
 	);
 };
 
 export async function getServerSideProps() {
 	const res = await fetch(
-		`http://localhost:9999/api/v1//product?limit=3&page=1&order_by=product_name&sort=desc&category=addon`
+		`http://localhost:9999/api/v1//product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
 	);
 	const data = await res.json();
 	return { props: { data } };

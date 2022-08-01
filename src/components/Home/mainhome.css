@@ -47,9 +47,134 @@
 
 }
 
+.home-mapping-big-word{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.home-mapping-small-word{
+    font-size: 25px;
+font-weight: bold;
+}
+.home-mapping-checklist-word{
+font-size: 20px;
+font-weight: bold;
+}
+.home-favorite-big-word{
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.home-favorite-small-word{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-favorite-product-name{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.home-favorite-product-image{
+    border-radius: 40%;
+}
+.home-favorite-product-price{
+    font-size: 20px;
+    font-weight: bold;
+}
+.home-store-world-map{
+    margin-top: 5%;
+}
+
+.home-partner-netflix{
+    margin-top: -2%;
+}
+.home-partner-amazon{
+    margin-top: -4.5%;
+}
+
+.home-card-review{
+    border: 2px solid #6A4029;
+}
+
+.home-review-name{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.home-review{
+
+    margin-bottom: 5%;
+}
+
+.home-card{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: -8%;
+}
+
+.home-card-1{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: -5%;
+}
+
+.home-card-main{
+    border-radius: 15px;
+}
+
+.home-card-button{
+    margin-top: 15%;
+    margin-right: 15%;
+    
+}
+
+.home-card-button-set{
+
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 20px;
+}
+.home-card-1-word{
+    font-size: 20px;
+    font-weight: bold;
+}
 @media only screen and (max-width: 767px) {
 .home-banner-responsive{
 visibility: hidden;
 max-height: 0;
+}
+.home-mapping-responsive{
+    visibility: hidden;
+max-height: 0;
+}
+
+.home-favorite-card{
+    margin-left: 0%;
+}
+
+.home-partner-netflix{
+    margin-top: -3%;
+}
+.home-partner-amazon{
+    margin-top: -6.5%;
+}
+.home-card{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.home-card-button-set{
+
+margin-top: 30%;
+margin-left: 35%;
+padding-right: 5%;
+padding-left: 5%;
+}
+
+.home-card-1{
+    visibility: hidden;
+    max-height: 0; 
 }
 }
