@@ -1,0 +1,22 @@
+.navbar-main{
+    margin-left: 5%;
+    margin-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+}
+.navbar-brand-word{
+    font-size: 30px;
+}
+.navbar-font{
+    color: black;
+    font-size: 24px;
+}
+.navbar-font-button{
+    color: #6A4029;
+    font-size: 24px;
+    font-weight: bolder;
+    border-radius: 15px;
+    padding-left: 7%;
+    padding-right: 7%;
+}

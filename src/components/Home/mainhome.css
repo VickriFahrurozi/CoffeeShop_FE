@@ -1,0 +1,55 @@
+.home-banner{
+
+    background-image:url('../asset/assetfile/Banner.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    height:fit-content;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    padding-top: 5%;
+
+}
+.home-banner-responsive{
+    margin-right: 0%;
+}
+
+.home-word-banner{
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+}
+
+.home-sub-word-banner{
+    font-size: 30px;
+
+    color: white;
+}
+.home-banner-button{
+    border-radius: 10px;
+    color: #6A4029;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.home-banner-search{
+    border-radius: 20px;
+    border:  0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 10%;
+    
+
+}
+
+@media only screen and (max-width: 767px) {
+.home-banner-responsive{
+visibility: hidden;
+max-height: 0;
+}
+}

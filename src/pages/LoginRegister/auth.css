@@ -1,3 +1,7 @@
+.login-container-fluid
+{
+margin-left: -5%;
+}
 .login-card{
     border: 0px;
 }
@@ -104,7 +108,9 @@ input::placeholder {
     font: 13px/3 sans-serif;
 }
 @media only screen and (max-width: 767px) {
-
+    .login-container-fluid{
+        margin-left: 0%;
+    }
 
 .login-content-left-a{
 visibility: hidden;
@@ -125,7 +131,6 @@ background-size: cover;
 
 .login-main-footer{
     visibility: hidden;
-    max-height: 0;
 }
 .login-coffe-shop-word-responsive{
     visibility: hidden;
