@@ -1,24 +1,16 @@
 /** @format */
 import styles from '../../styles/Home.module.css';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from '../components/footer.js';
 import { useRouter } from 'next/router';
-import axios from 'axios';
-import { AuthLogout } from '../redux/actions/Auth';
-import Navbar from '../components/navbar';
+import { Navbar } from '../components/navbar';
 import Home from '../components/Home/Home';
 const home = (data) => {
-	const { list, totalpage, totalrow, totaldata } = data;
-	const dispatch = useDispatch();
 	const router = useRouter();
 	const [Refetch, setRefetch] = useState();
 	const { isLogin } = useSelector((indexreducer) => indexreducer.auth);
-	const myLoader = ({ src }) => {
-		return `http://localhost:9999/upload/${src}`;
-	};
 	useEffect(() => {
 		if (isLogin == true) {
 			router.replace(`/User/homeuser`);
@@ -29,7 +21,11 @@ const home = (data) => {
 		<>
 			<Navbar />
 			<Home data={data} />
-			<Footer />
+			<div className='bg-light'>
+				<div className={styles['main-footer']}>
+					<Footer />
+				</div>
+			</div>
 		</>
 	);
 };

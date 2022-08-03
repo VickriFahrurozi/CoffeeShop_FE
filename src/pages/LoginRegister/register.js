@@ -32,10 +32,12 @@ const register = () => {
 	};
 
 	useEffect(() => {
-		if (isLogin == true) {
+		if (isLogin == true && data.role == 222) {
 			// router.replace(`/User/homeuser`, `/User/homeuser/${data.id}`);
 			router.replace(`/User/homeuser`);
 			// router.push('/LoginRegister/register');
+		} else if (isLogin == true && data.role == 111) {
+			router.replace(`/User/homeuser`);
 		}
 	}, [Refetch]);
 	return (
@@ -43,7 +45,7 @@ const register = () => {
 			<div className='container-fluid login-container-fluid'>
 				<div className='row'>
 					<div className='col d-flex login-content-left  flex-row-reverse login-content-left-a'>
-						<Image className='img-fluid ' src={loginimage2} />
+						<Image className='img-fluid ' src={loginimage2} width={'1100'} />
 					</div>
 					<div className='col-sm-12 col-md-6 d-flex card login-card  ps-4'>
 						<div className='login-content-right '>

@@ -58,3 +58,46 @@ export default login;
 		<></>
 	)}
 </>;
+
+/** @format */
+// import { useEffect, useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getSingleProduct } from '../../redux/actions/Product';
+// import Image from 'next/image';
+// import Link from 'next/link';
+// import ProductDetailLeft from './ProductDetailLeft';
+// import ProductDetailRight from './ProductDetailRight';
+
+// const ProductDetailLayout = (data) => {
+// 	const dispatch = useDispatch();
+// 	const dataprodduk = useSelector((state) => state.singleproduct);
+// 	const [Refetch, setRefetch] = useState();
+// 	const [ProductList, setProductList] = useState({
+// 		id: 1,
+// 	});
+// 	useEffect(() => {
+// 		console.log(ProductList.id, 'ini ke dispatch loh');
+// 		dispatch(getSingleProduct(ProductList.id));
+// 	}, [Refetch]);
+// 	console.log(data.data, 'data id dari props');
+// 	const { list } = dataprodduk.data;
+// 	return (
+// 		<>
+// 			<div className='container-fluid'>
+// 				<div className='row'>Favorite & Promo-</div>
+// 				<div className='row'>
+// 					<div className='col-12 justify-content-center d-md-flex'>
+// 						<div className='col-md-5 col-sm-12 justify-content-center'>
+// 							<ProductDetailLeft data={list} />
+// 						</div>
+// 						<div className='col-md-7 col-sm-12 bg-warning'>
+// 							<ProductDetailRight data={list} />
+// 						</div>
+// 					</div>
+// 				</div>
+// 			</div>
+// 		</>
+// 	);
+// };
+
+// export default ProductDetailLayout;

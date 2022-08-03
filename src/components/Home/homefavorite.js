@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { checklist } from '../asset/assetauth';
 const HomeFavorite = (data) => {
-	console.log(data, 'ini data dari propsnya loh');
 	const { list, totalpage, totalrow, totaldata } = data.data.data.data;
 	return (
 		<>

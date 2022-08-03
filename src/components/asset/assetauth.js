@@ -22,6 +22,10 @@ import star from './assetfile/Star.svg';
 import user from './assetfile/user.svg';
 import location from './assetfile/location.svg';
 import heart from './assetfile/heart.svg';
+import mothersday from './assetfile/CouponMothersDay.png';
+import halloween from './assetfile/CouponHalloWeen.png';
+import sundaymorning from './assetfile/CouponSundayMorning.png';
+
 export {
 	loginimage,
 	coffeelogo,
@@ -45,4 +49,7 @@ export {
 	user,
 	location,
 	heart,
+	mothersday,
+	halloween,
+	sundaymorning,
 };

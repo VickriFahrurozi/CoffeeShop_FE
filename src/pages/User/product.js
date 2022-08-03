@@ -6,8 +6,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Footer from '../../components/footer';
 import { useRouter } from 'next/router';
 import { NavbarLogin, Navbar } from '../../components/navbar';
-import Home from '../../components/Home/Home';
-const homeuser = (data) => {
+import Product from '../../components/Product/Product';
+import Link from 'next/link';
+const productuser = (data) => {
 	const router = useRouter();
 	const [Refetch, setRefetch] = useState();
 	const { isLogin } = useSelector((indexreducer) => indexreducer.auth);
@@ -20,12 +21,8 @@ const homeuser = (data) => {
 	return (
 		<>
 			<NavbarLogin />
-			<Home data={data} />
-			<div className='bg-light'>
-				<div className={styles['main-footer']}>
-					<Footer />
-				</div>
-			</div>
+			<Product />
+			<Footer />
 		</>
 	);
 };
@@ -38,7 +35,7 @@ export async function getServerSideProps() {
 	return { props: { data } };
 }
 
-export default homeuser;
+export default productuser;
 
 {
 	/* <button

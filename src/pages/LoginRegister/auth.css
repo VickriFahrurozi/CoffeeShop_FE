@@ -107,6 +107,12 @@ color: #9F9F9F;
 input::placeholder {
     font: 13px/3 sans-serif;
 }
+
+.image-cover-login{
+    object-fit: fill;
+
+    
+}
 @media only screen and (max-width: 767px) {
     .login-container-fluid{
         margin-left: 0%;

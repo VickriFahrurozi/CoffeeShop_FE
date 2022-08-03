@@ -9,7 +9,7 @@ import {
 const Footer = () => {
 	return (
 		<>
-			<div className='col-12 d-flex ps-5 pe-5 mt-5 footer-main'>
+			<div className='col-12 d-flex ps-5 pe-5 mt-5 '>
 				<div className='col-6 '>
 					<div className='d-flex align-items-center '>
 						<Image src={coffeelogo} />
