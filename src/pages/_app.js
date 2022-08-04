@@ -10,6 +10,7 @@ import '../components/footer.css';
 import '../components/navbar.css';
 import '../components/Home/mainhome.css';
 import '../components/Product/mainproduct.css';
+import './Order/order.css';
 import { store, persistor } from '../redux/store';
 
 function MyApp({ Component, pageProps }) {

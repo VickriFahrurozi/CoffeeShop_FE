@@ -12,6 +12,7 @@ const home = (data) => {
 	const [Refetch, setRefetch] = useState();
 	const { isLogin } = useSelector((indexreducer) => indexreducer.auth);
 	useEffect(() => {
+		console.log(data, 'ini datanyaa');
 		if (isLogin == true) {
 			router.replace(`/User/homeuser`);
 		}

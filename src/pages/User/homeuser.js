@@ -10,10 +10,13 @@ import Home from '../../components/Home/Home';
 const homeuser = (data) => {
 	const router = useRouter();
 	const [Refetch, setRefetch] = useState();
-	const { isLogin } = useSelector((indexreducer) => indexreducer.auth);
+	const datalogin = useSelector((indexreducer) => indexreducer.auth);
+	console.log(datalogin.isLogin, 'asfiujshf');
 	useEffect(() => {
-		if (isLogin == false) {
+		if (datalogin.isLogin == false) {
 			router.replace(`/LoginRegister/login`);
+		} else if (datalogin.isLogin == true && datalogin.data.role == 222) {
+			router.replace(`/Admin/Adminorder`);
 		}
 	}, [Refetch]);
 

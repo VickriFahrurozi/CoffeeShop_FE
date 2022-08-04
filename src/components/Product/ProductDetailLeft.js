@@ -11,8 +11,8 @@ const ProductDetailLeft = (data) => {
 					<Image
 						className='rounded-circle'
 						src={`http://localhost:9999/upload/${list.product_picture}`}
-						width={'500'}
-						height={'500'}
+						width={'700'}
+						height={'1000'}
 					/>
 				</div>
 				<div className='col-12 d-flex justify-content-center product-detail-name'>
