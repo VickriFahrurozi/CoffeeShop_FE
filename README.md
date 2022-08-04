@@ -23,8 +23,8 @@
  Make sure that Node JS is installed on the computer.
 
 * [Next Js](https://nextjs.org/)
-* [https://redux.js.org/](https://redux.js.org/)
-* [Bootstrap 5] (https://getbootstrap.com/)
+* [Redux](https://redux.js.org/)
+* [Bootstrap 5](https://getbootstrap.com/)
 
   
 
