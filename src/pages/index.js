@@ -33,10 +33,27 @@ const home = (data) => {
 
 export async function getServerSideProps() {
 	const res = await fetch(
-		`http://localhost:9999/api/v1//product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
+		`https://seahorse-app-bmw8s.ondigitalocean.app/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
 	);
-	const data = await res.json();
+	console.log(res, 'ini resnya');
+	const data = await res.text();
 	return { props: { data } };
 }
 
 export default home;
+
+// export async function getServerSideProps() {
+// 	const res = await axios.get(
+// 		`https://seahorse-app-bmw8s.ondigitalocean.app/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`,
+// 		{
+// 			headers: {
+// 				Accept: 'application/json, text/plain, */*',
+// 				'User-Agent': '*',
+// 			},
+// 		}
+// 	);
+
+// 	console.log(res, 'ini resnya loh');
+// 	const data = await res.json();
+// 	return { props: { data } };
+// }

@@ -1,4 +1,5 @@
 /** @format */
+
 import { NavbarLogin } from '../../components/navbar';
 import { useSelector, useDispatch } from 'react-redux/';
 import Footer from '../../components/footer';
@@ -35,6 +36,7 @@ const Order = () => {
 							<div className='col-2'>Payment</div>
 							<div className='col-2'>Status</div>
 						</div>
+
 						{list?.map((item, index) => {
 							return (
 								<>
@@ -58,9 +60,9 @@ const Order = () => {
 };
 
 // export async function getServerSideProps() {
-// const dataauth = useSelector((indexreducer) => indexreducer.auth);
+// // const dataauth = useSelector((indexreducer) => indexreducer.auth);
 // 	const res = await fetch(
-// 		`http://localhost:9999/api/v1//product/order/id?id=2`
+// 		`https://seahorse-app-bmw8s.ondigitalocean.app//product/order/id?id=2`
 // 	);
 // 	const userorder = await res.json();
 // 	return { props: { userorder } };

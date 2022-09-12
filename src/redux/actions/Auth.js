@@ -22,12 +22,20 @@ const LoginError = (error) => {
 	};
 };
 
+
+export const AuthLogout = () => {
+	alert('Logout Success');
+	return {
+		type: 'AUTH_LOGOUT',
+	};
+};
+
 export const AuthLogin = (formData) => {
 	return (dispatch) => {
 		dispatch(LoginRequest());
 		axios({
 			method: 'POST',
-			url: 'http://localhost:9999/api/v1/auth/login',
+			url: 'https://seahorse-app-bmw8s.ondigitalocean.app/auth/login',
 			data: {
 				email: formData.email,
 				password: formData.password,
@@ -35,6 +43,7 @@ export const AuthLogin = (formData) => {
 		})
 			.then((res) => {
 				dispatch(LoginSuccess(res.data.data));
+				alert(res.data.message);
 			})
 			.catch((err) => {
 				dispatch(LoginError(alert(err.response.data.message)));
@@ -67,7 +76,7 @@ export const AuthRegister = (formData) => {
 		dispatch(RegisterRequest());
 		axios({
 			method: 'POST',
-			url: 'http://localhost:9999/api/v1/auth/register',
+			url: 'https://seahorse-app-bmw8s.ondigitalocean.app/auth/register',
 			data: {
 				email: formData.email,
 				phoneNumber: formData.phoneNumber,
@@ -82,11 +91,5 @@ export const AuthRegister = (formData) => {
 			.catch((err) => {
 				dispatch(RegisterError(alert(err.response.data.message)));
 			});
-	};
-};
-
-export const AuthLogout = () => {
-	return {
-		type: 'AUTH_LOGOUT',
 	};
 };

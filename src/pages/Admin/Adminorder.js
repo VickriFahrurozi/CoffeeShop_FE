@@ -101,8 +101,10 @@ const Adminorder = (data) => {
 
 export async function getServerSideProps() {
 	// const dataauth = useSelector((indexreducer) => indexreducer.auth);
-	const res = await fetch(`http://localhost:9999/api/v1//product/order/all`);
-	const data = await res.json();
+	const res = await fetch(
+		`https://seahorse-app-bmw8s.ondigitalocean.app/product/order/all`
+	);
+	const data = await res.text();
 	return { props: { data } };
 }
 

@@ -155,7 +155,7 @@ const NavbarLogin = () => {
 							</text>
 							<Image
 								className='card rounded-circle bg-light'
-								src={`http://localhost:9999/upload/${picture}`}
+								src={`https://seahorse-app-bmw8s.ondigitalocean.app/${picture}`}
 								width={'50'}
 								height={'50'}
 							/>
@@ -247,7 +247,7 @@ const NavbarAdmin = () => {
 							</text>
 							<Image
 								className='card rounded-circle bg-light'
-								src={`http://localhost:9999/upload/${picture}`}
+								src={`https://seahorse-app-bmw8s.ondigitalocean.app/${picture}`}
 								width={'50'}
 								height={'50'}
 							/>
