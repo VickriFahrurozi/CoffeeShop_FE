@@ -92,7 +92,7 @@ export const getProduct = (limit, page, order_by, sort, category) => {
 		dispatch(getProductRequest()); //PAKE THEN CATCH
 		axios({
 			method: 'GET',
-			url: `https://seahorse-app-bmw8s.ondigitalocean.app//product?limit=${limit}&page=${page}&order_by=${order_by}&sort=${sort}&category=${category}`,
+			url: `https://seahorse-app-bmw8s.ondigitalocean.app/api/v1//product?limit=${limit}&page=${page}&order_by=${order_by}&sort=${sort}&category=${category}`,
 		})
 			.then((res) => {
 				//success
@@ -108,7 +108,7 @@ export const getSingleProduct = (id) => {
 		dispatch(getSingleProductRequest()); //PAKE THEN CATCH
 		axios({
 			method: 'GET',
-			url: `https://seahorse-app-bmw8s.ondigitalocean.app/product/id?id=${id}`,
+			url: `https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product/id?id=${id}`,
 		})
 			.then((res) => {
 				//success
@@ -133,7 +133,7 @@ export const addOrder = (
 		dispatch(updateOrderRequest()); //PAKE THEN CATCH
 		axios({
 			method: 'POST',
-			url: `https://seahorse-app-bmw8s.ondigitalocean.app/product/order?name=${name}&profile_id=${profile}&product_id=${product}&order_price=${price}&order_address=${address}&order_payment_method=${payment}&order_size=${size}&order_quantity=${quantity}`,
+			url: `https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product/order?name=${name}&profile_id=${profile}&product_id=${product}&order_price=${price}&order_address=${address}&order_payment_method=${payment}&order_size=${size}&order_quantity=${quantity}`,
 		})
 			.then((res) => {
 				//success
@@ -152,12 +152,11 @@ export const getOrder = (id) => {
 		dispatch(getOrderRequest()); //PAKE THEN CATCH
 		axios({
 			method: 'GET',
-			url: `https://seahorse-app-bmw8s.ondigitalocean.app//product/order/id?id=${id}`,
+			url: `https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product/order/id?id=${id}`,
 		})
 			.then((res) => {
 				//success
 				dispatch(getOrderSuccess(res.data));
-				alert(res.data.message);
 			})
 			.catch((err) => {
 				dispatch(getOrderError(err.response));
@@ -169,7 +168,7 @@ export const updateOrder = (id, status) => {
 		dispatch(getOrderRequest()); //PAKE THEN CATCH
 		axios({
 			method: 'PATCH',
-			url: `https://seahorse-app-bmw8s.ondigitalocean.app/product/order/status?order_id=${id}&status=${status}`,
+			url: `https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product/order/status?order_id=${id}&status=${status}`,
 		})
 			.then((res) => {
 				//success

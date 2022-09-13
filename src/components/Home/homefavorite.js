@@ -26,7 +26,7 @@ const HomeFavorite = (data) => {
 												<Image
 													className='home-favorite-product-image'
 													// loader={myLoader(item.product_picture)}
-													src={`https://seahorse-app-bmw8s.ondigitalocean.app/${item.product_picture}`}
+													src={`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/${item.product_picture}`}
 													width={'100'}
 													height={'200'}
 												/>

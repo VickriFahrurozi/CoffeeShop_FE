@@ -2,19 +2,32 @@
 
 import { NavbarAdmin } from '../../components/navbar';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { updateOrder } from '../../redux/actions/Product';
+import { useRouter } from 'next/router';
 
 const Adminorder = (data) => {
 	const dispatch = useDispatch();
+	const router = useRouter();
+	const datalogin = useSelector((indexreducer) => indexreducer.auth);
 	const [status, setstatus] = useState({
 		status: 'A',
 	});
 	const [Refetch, setRefetch] = useState();
 	const { list } = data.data;
 
-	useEffect(() => {}, [Refetch]);
+	useEffect(() => {
+		console.log(datalogin.isLogin, 'ini data nya');
+		console.log(datalogin.data.role, 'ini data nya');
+		if (datalogin.isLogin == false || datalogin.data.role != 222) {
+			if (datalogin.isLogin == true || datalogin.data.role == 222) {
+				router.replace(`/User/homeuser`);
+			} else if (datalogin.isLogin == false || !datalogin.data.role) {
+				router.replace(`/`);
+			}
+		}
+	}, [datalogin]);
 	return (
 		<>
 			<NavbarAdmin />
@@ -102,9 +115,9 @@ const Adminorder = (data) => {
 export async function getServerSideProps() {
 	// const dataauth = useSelector((indexreducer) => indexreducer.auth);
 	const res = await fetch(
-		`https://seahorse-app-bmw8s.ondigitalocean.app/product/order/all`
+		`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product/order/all`
 	);
-	const data = await res.text();
+	const data = await res.json();
 	return { props: { data } };
 }
 

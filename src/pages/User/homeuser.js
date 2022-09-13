@@ -35,7 +35,7 @@ const homeuser = (data) => {
 
 export async function getServerSideProps() {
 	const res = await fetch(
-		`https://seahorse-app-bmw8s.ondigitalocean.app/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
+		`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
 	);
 	const data = await res.text();
 	return { props: { data } };

@@ -39,7 +39,7 @@ const register = () => {
 		} else if (isLogin == true && data.role == 111) {
 			router.replace(`/User/homeuser`);
 		}
-	}, [Refetch]);
+	}, [isLogin]);
 	return (
 		<>
 			<div className='container-fluid login-container-fluid'>

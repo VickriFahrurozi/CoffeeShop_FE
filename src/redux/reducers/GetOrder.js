@@ -7,7 +7,23 @@ const initialState = {
 	data: {
 		message: '',
 		status: '',
-		list: {},
+		list: [
+			{
+				orders_id: '',
+				profile_id: 2,
+				product_name: '',
+				product_id: '',
+				order_price: '',
+				order_size: '',
+				order_quantity: '',
+				order_status: '',
+				order_address: '',
+				order_payment_method: '',
+				order_payment_status: '',
+				created_at: '',
+				updated_at: '',
+			},
+		],
 	},
 	error: '',
 };

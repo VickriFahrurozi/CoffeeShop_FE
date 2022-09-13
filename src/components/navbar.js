@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { AuthLogout } from '../redux/actions/Auth';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const Navbar = () => {
@@ -85,11 +86,20 @@ const Navbar = () => {
 	);
 };
 const NavbarLogin = () => {
+	const router = useRouter();
 	const data = useSelector((indexreducer) => indexreducer.auth);
 	const { profile_name, picture } = data.data;
 	const dispatch = useDispatch();
 	const [Refetch, setRefetch] = useState();
-	useEffect(() => {}, [Refetch]);
+	useEffect(() => {
+		if (data.data.role != 111) {
+			if (data.isLogin == true || data.data.role == 222) {
+				router.replace(`/Admin/Adminorder`);
+			} else if (data.isLogin == false || !data.data.role) {
+				router.replace(`/`);
+			}
+		}
+	}, [data.isLogin]);
 	return (
 		<>
 			<nav className='navbar navbar-expand-md navbar-light bg-light'>
@@ -155,7 +165,7 @@ const NavbarLogin = () => {
 							</text>
 							<Image
 								className='card rounded-circle bg-light'
-								src={`https://seahorse-app-bmw8s.ondigitalocean.app/${picture}`}
+								src={`https://seahorse-app-bmw8s.ondigitalocean.app/upload/${picture}`}
 								width={'50'}
 								height={'50'}
 							/>
@@ -181,7 +191,7 @@ const NavbarAdmin = () => {
 	const { profile_name, picture } = data.data;
 	const dispatch = useDispatch();
 	const [Refetch, setRefetch] = useState();
-	useEffect(() => {}, [Refetch]);
+	useEffect(() => {}, [data]);
 	return (
 		<>
 			<nav className='navbar navbar-expand-md navbar-light bg-light'>
@@ -247,7 +257,7 @@ const NavbarAdmin = () => {
 							</text>
 							<Image
 								className='card rounded-circle bg-light'
-								src={`https://seahorse-app-bmw8s.ondigitalocean.app/${picture}`}
+								src={`https://seahorse-app-bmw8s.ondigitalocean.app/upload/${picture}`}
 								width={'50'}
 								height={'50'}
 							/>

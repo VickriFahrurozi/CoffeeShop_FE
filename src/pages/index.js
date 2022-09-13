@@ -16,7 +16,7 @@ const home = (data) => {
 		if (isLogin == true) {
 			router.replace(`/User/homeuser`);
 		}
-	}, [Refetch]);
+	}, [isLogin]);
 
 	return (
 		<>
@@ -33,7 +33,7 @@ const home = (data) => {
 
 export async function getServerSideProps() {
 	const res = await fetch(
-		`https://seahorse-app-bmw8s.ondigitalocean.app/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
+		`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
 	);
 	console.log(res, 'ini resnya');
 	const data = await res.text();
@@ -44,7 +44,7 @@ export default home;
 
 // export async function getServerSideProps() {
 // 	const res = await axios.get(
-// 		`https://seahorse-app-bmw8s.ondigitalocean.app/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`,
+// 		`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`,
 // 		{
 // 			headers: {
 // 				Accept: 'application/json, text/plain, */*',

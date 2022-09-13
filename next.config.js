@@ -17,6 +17,6 @@ module.exports = {
 		ignoreDuringBuilds: true,
 	},
 	images: {
-		domains: ['localhost'],
+		domains: ['seahorse-app-bmw8s.ondigitalocean.app'],
 	},
 };

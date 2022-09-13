@@ -224,7 +224,7 @@ const ProductDetailRight = (data) => {
 								<div className='col-2'>
 									<Image
 										className='rounded-circle'
-										src={`https://seahorse-app-bmw8s.ondigitalocean.app/${list.product_picture}`}
+										src={`https://seahorse-app-bmw8s.ondigitalocean.app/upload/${list.product_picture}`}
 										width={'100'}
 										height={'100'}
 									/>
