@@ -8,7 +8,7 @@ import facebook from './assetfile/Facebook.svg';
 import instagram from './assetfile/Instagram.svg';
 import twitter from './assetfile/Twitter.svg';
 import banner from './assetfile/Banner.png';
-import search from './assetfile/search.svg';
+import search from './assetfile/Search.svg';
 import homemapping from './assetfile/HomeMapping.png';
 import checklist from './assetfile/Checklist.svg';
 import worldstore from './assetfile/WorldStore.png';
