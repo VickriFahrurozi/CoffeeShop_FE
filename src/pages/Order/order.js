@@ -61,7 +61,7 @@ const Order = () => {
 // export async function getServerSideProps() {
 // // const dataauth = useSelector((indexreducer) => indexreducer.auth);
 // 	const res = await fetch(
-// 		`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1//product/order/id?id=2`
+// 		`http://localhost:9999/api/v1//product/order/id?id=2`
 // 	);
 // 	const userorder = await res.json();
 // 	return { props: { userorder } };

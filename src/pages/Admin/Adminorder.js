@@ -18,8 +18,9 @@ const Adminorder = (data) => {
 	const { list } = data.data;
 
 	useEffect(() => {
-		console.log(datalogin.isLogin, 'ini data nya');
-		console.log(datalogin.data.role, 'ini data nya');
+		{
+			console.log(data.data, 'ini datanyaa');
+		}
 		if (datalogin.isLogin == false || datalogin.data.role != 222) {
 			if (datalogin.isLogin == true || datalogin.data.role == 222) {
 				router.replace(`/User/homeuser`);
@@ -114,9 +115,7 @@ const Adminorder = (data) => {
 
 export async function getServerSideProps() {
 	// const dataauth = useSelector((indexreducer) => indexreducer.auth);
-	const res = await fetch(
-		`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product/order/all`
-	);
+	const res = await fetch(`http://localhost:9999/api/v1/product/order/all`);
 	const data = await res.json();
 	return { props: { data } };
 }

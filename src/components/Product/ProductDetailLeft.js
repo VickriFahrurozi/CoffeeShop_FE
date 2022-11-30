@@ -10,7 +10,7 @@ const ProductDetailLeft = (data) => {
 				<div className='col-12 d-flex justify-content-center'>
 					<Image
 						className='rounded-circle'
-						src={`https://seahorse-app-bmw8s.ondigitalocean.app/upload/${list.product_picture}`}
+						src={`http://localhost:9999/upload/${list.product_picture}`}
 						width={'700'}
 						height={'1000'}
 					/>

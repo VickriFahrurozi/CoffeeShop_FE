@@ -29,7 +29,7 @@ const productuser = (data) => {
 
 export async function getServerSideProps() {
 	const res = await fetch(
-		`https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
+		`http://localhost:9999/api/v1/product?limit=3&page=1&order_by=product_buy_count&sort=desc&category=coffee`
 	);
 	console.log(res, 'ini resnya');
 	const data = await res.text();

@@ -195,7 +195,7 @@ const ProductList = () => {
 										<Image
 											className='home-favorite-product-image p-2'
 											// loader={myLoader(item.product_picture)}
-											src={`https://seahorse-app-bmw8s.ondigitalocean.app/upload/${item.product_picture}`}
+											src={`http://localhost:9999/upload/${item.product_picture}`}
 											width={'100'}
 											height={'200'}
 										/>

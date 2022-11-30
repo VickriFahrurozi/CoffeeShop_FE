@@ -10,19 +10,17 @@ const ProductDetailRight = (data) => {
 	const router = useRouter();
 	const produk = useSelector((indexreducer) => indexreducer.singleproduct);
 	const auth = useSelector((indexreducer) => indexreducer.auth);
-	console.log(auth.data.id, 'ini auth');
-	console.log(router.query.productdetail, 'ini auth');
 	const list = data.data[0];
 	const dataprodukreal = produk.data.list[0];
 	const category = list.product_category;
-	console.log(dataprodukreal.product_category);
+	console.log(dataprodukreal.product_name, 'tes');
 	const [dataproduct, setdataproduct] = useState({
 		size: 'R',
 		delivery: 'dinein',
 		quantity: 1,
 		price: 15000,
 		payment_method: 'cash',
-		name: '',
+		name: dataprodukreal.product_name,
 	});
 
 	useEffect(() => {
@@ -224,7 +222,7 @@ const ProductDetailRight = (data) => {
 								<div className='col-2'>
 									<Image
 										className='rounded-circle'
-										src={`https://seahorse-app-bmw8s.ondigitalocean.app/upload/${list.product_picture}`}
+										// src={`http://localhost:9999/upload/${list.product_picture}`}
 										width={'100'}
 										height={'100'}
 									/>
@@ -280,9 +278,10 @@ const ProductDetailRight = (data) => {
 									<button
 										className='btn btn-success detail-product-delivery-button col-11'
 										onClick={() => {
+											console.log(dataproduct, 'tes sebelum dipesan');
 											dispatch(
 												addOrder(
-													dataproduct.name,
+													dataprodukreal.product_name,
 													auth.data.id,
 													router.query.productdetail,
 													dataproduct.price,

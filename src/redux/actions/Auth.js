@@ -1,6 +1,7 @@
 /** @format */
 
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const LoginRequest = () => {
 	return {
@@ -22,9 +23,8 @@ const LoginError = (error) => {
 	};
 };
 
-
 export const AuthLogout = () => {
-	alert('Logout Success');
+	Swal.fire('Logout Success', '', 'success');
 	return {
 		type: 'AUTH_LOGOUT',
 	};
@@ -35,7 +35,7 @@ export const AuthLogin = (formData) => {
 		dispatch(LoginRequest());
 		axios({
 			method: 'POST',
-			url: 'https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/auth/login',
+			url: 'http://localhost:9999/api/v1/auth/login',
 			data: {
 				email: formData.email,
 				password: formData.password,
@@ -43,12 +43,10 @@ export const AuthLogin = (formData) => {
 		})
 			.then((res) => {
 				dispatch(LoginSuccess(res.data.data));
-				console.log(res.data, 'ini res.data');
-				alert(res.data.message);
+				Swal.fire(res.data.message, '', 'success');
 			})
 			.catch((err) => {
-				console.log(err, 'ini err.data');
-				dispatch(LoginError(alert(err.response.data.message)));
+				dispatch(LoginError(Swal.fire(err.response.data.message, '', 'error')));
 			});
 	};
 };
@@ -78,7 +76,7 @@ export const AuthRegister = (formData) => {
 		dispatch(RegisterRequest());
 		axios({
 			method: 'POST',
-			url: 'https://seahorse-app-bmw8s.ondigitalocean.app/api/v1/auth/register',
+			url: 'http://localhost:9999/api/v1/auth/register',
 			data: {
 				email: formData.email,
 				phoneNumber: formData.phoneNumber,
@@ -88,7 +86,7 @@ export const AuthRegister = (formData) => {
 		})
 			.then((res) => {
 				dispatch(RegisterSuccess(res.data));
-				alert(res.data.message);
+				Swal.fire(res.data.message, '', 'success');
 			})
 			.catch((err) => {
 				dispatch(RegisterError(alert(err.response.data.message)));
